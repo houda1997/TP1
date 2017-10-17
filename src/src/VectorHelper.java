@@ -8,12 +8,14 @@ import java.io.*;
 public class VectorHelper {
     private  int Tab [];
     private  int taille;
+    private int min;
+    private int max;
     
     public VectorHelper(int [] Tab, int taille){
     this.Tab = Tab;
     this.taille = taille;
     }
-    int [] Sommer (int Tab2 [], int taille2) throws InegaliteException
+    public int [] Sommer (int Tab2 [], int taille2) throws InegaliteException
     {
         int i;
         int Result [];
@@ -26,7 +28,7 @@ public class VectorHelper {
         return Result;
     }
 
-    void trier (int [] tab, int taille)
+    void trier ()
     {
         boolean ord = false;
 
@@ -35,11 +37,11 @@ public class VectorHelper {
             ord = true;
             for(int i=0 ; i <taille ; i++)
             {
-                if(tab[i] > tab[i+1])
+                if(Tab[i] > Tab[i+1])
                 {
-                    int a=tab[i];
-                    tab[i]=tab[i+1];
-                    tab[i+1]=a;
+                    int a=Tab[i];
+                    Tab[i]=Tab[i+1];
+                    Tab[i+1]=a;
 
                     ord = false;
                 }
@@ -48,43 +50,36 @@ public class VectorHelper {
         }
     }
 
-    int max (int [] tab, int taille)
+   public void maxmin ()
     {
-        int i,m ;
-        m=tab[0];
+        int i,max,min;
+        max=Tab[0];
+        min=Tab[0];
         for (i=0;i<taille;i++)
         {
-            if (tab[i]>m)  { m=tab[i];}
+            if (Tab[i]>max)  { max=Tab[i];}
+             if (Tab[i]<min)  { min=Tab[i];}
         }
-        return m;
-    }
-
-    int min (int [] tab, int taille )
-    {
-        int i,m ;
-        m=tab[0];
-        for (i=0;i<taille;i++)
-        {
-            if (tab[i]<m)  { m=tab[i];}
-        }
-        return m;
+        this.max=max;
+        this.min=min;
     }
 
 
-    int [] inverser (int []tab, int taille )
+
+    public int [] inverser ()
     {
         int j=taille-1;
         int [] tab2= new int [taille];
 
         for (int i=0;i<taille;i++) {
-            tab2[j] = tab[i];
+            tab2[j] = Tab[i];
             j--;
         }
         return tab2;
 
     }
    
-   public void FnctApplique (int [] f, int [] Tab){
+   public void FnctApplique (int [] f){
         int i;
         int j=1;
         switch(f[0]){
