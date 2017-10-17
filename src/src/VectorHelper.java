@@ -6,13 +6,18 @@
 import java.util.*;
 import java.io.*;
 public class VectorHelper {
-    //int Tab [];
-    //int taille;
-    int [] Sommer (int [] Tab, int taille1,int Tab2 [], int taille2) throws InegaliteException
+    private  int Tab [];
+    private  int taille;
+    
+    public VectorHelper(int [] Tab, int taille){
+    this.Tab = Tab;
+    this.taille = taille;
+    }
+    int [] Sommer (int Tab2 [], int taille2) throws InegaliteException
     {
         int i;
         int Result [];
-        if (taille2 != taille1) throw new InegaliteException ();
+        if (taille2 != taille) throw new InegaliteException ();
         Result = new int [taille];
         for (i=0; i< taille; i++)
         {
@@ -21,7 +26,7 @@ public class VectorHelper {
         return Result;
     }
 
-    void trier (int [] tab; int taille)
+    void trier (int [] tab, int taille)
     {
         boolean ord = false;
 
@@ -78,4 +83,33 @@ public class VectorHelper {
         return tab2;
 
     }
+   
+   public void FnctApplique (int [] f, int [] Tab){
+        int i;
+        int j=1;
+        switch(f[0]){
+            case 1: // ax
+                for (i=0; i<taille; i++) {
+                    Tab [i] = Tab [i]*f[1]; 
+                }
+                break; 
+            case 2: //x^a
+                for (i=0; i<taille; i++) {
+                    if (f[1] == 0) Tab[i]=1;
+                    else if (f[1] > 1) 
+                    while(j <= f[1]) {
+                    Tab [i] = Tab [i]*Tab[i];
+                    j++;
+                    }
+                }
+                break;
+            case 3: // x+a
+                for (i=0; i<taille; i++) {
+                    Tab [i] = Tab [i]+f[1]; 
+                }
+                break; 
+                
+        }
+       
+   }    
 }
