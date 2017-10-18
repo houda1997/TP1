@@ -1,6 +1,7 @@
 
 /**
- * Created by Houda' on 17/10/2017.
+ * TP IGL APPLICATION 2
+ * PAR ABOUCHAMALA HOUDA, DJEDDAL HANANE, GROUPE 1
  */
 
 import java.util.*;
@@ -13,10 +14,23 @@ public class VectorHelper {
     private int taille;
     private int max,min;
 
+    /**
+     * Constructeur de la classe VectorHelper
+     * @param Tab : un tableau d'entier pour initialiser l'attribut TAB
+     * @param taille : le nombre d'éléments de "Tab"
+     */
     public VectorHelper(int [] Tab, int taille){
     this.Tab = Tab;
     this.taille = taille;
     }
+    
+    /**
+     * Sommer les éléments de deux tableaux case par case 
+     * @param Tab2 : le tableau qu'on va sommmer ses éléments aux éléments de "Tab" 
+     * @param taille2 : le nombre d'éléments de "Tab2"
+     * @return le tableau tel que chaque case=Tab[i] + Tab2[i] de taille "taille" 
+     * @throws InegaliteException si taille != taille2
+     */
     public int [] Sommer (int Tab2 [], int taille2) throws InegaliteException
 
     {
@@ -33,7 +47,9 @@ public class VectorHelper {
     }
 
 
-
+   /**
+   * Trier un tableau avec la méthode "Tri Bulles"
+   */
     public void trier ()
     {
         boolean ord = false;
@@ -52,7 +68,9 @@ public class VectorHelper {
         }
     }
 
- 
+    /**
+    * Cherche le plus grand et le plus petit éléments d'un tableau
+    */
    public void maxmin ()
     {
         int i,max,min;
@@ -67,7 +85,10 @@ public class VectorHelper {
         this.min=min;
     }
 
-
+   /**
+   * Inverser un tableau 
+   * @return l'invesre du tableau "Tab"
+   */
     public int [] inverser ()
     {
         int j=taille-1;
@@ -80,7 +101,7 @@ public class VectorHelper {
         return tab2;
 
     }
-   
+  
    public void FnctApplique (int [] choix){
         int i;
         class Fonction {
