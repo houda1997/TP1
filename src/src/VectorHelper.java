@@ -7,7 +7,10 @@
 import java.util.*;
 import java.io.*;
 
-
+/**
+ *
+ * @author Houda'
+ */
 public class VectorHelper {
 
     private int Tab [];
@@ -101,22 +104,43 @@ public class VectorHelper {
         return tab2;
 
     }
-  
-   public void FnctApplique (int [] choix){
+
+   /**
+    * Applique une fonction à tout les éléments de "Tab"
+    * @param f tableau d'entier dont le 1er élément correspond à une fonction et le 2eme élément est un paramétre de la fonction 
+    *f[0] = 1 : a.x
+    *f[0] = 2 : x^a
+    *f[0] = 3 : x+a
+    *f[1] = a
+    */       
+   public void FnctApplique (int [] f){
         int i;
-        class Fonction {
-             public int funct (int x, int p) { return x;}
+        int j=1;
+        int Val;
+        switch(f[0]){
+            case 1: // ax
+                for (i=0; i<taille; i++) {
+                    Tab [i] = Tab [i]*f[1]; 
+                }
+                break; 
+            case 2: //x^a
+                for (i=0; i<taille; i++) {
+                    j=1;
+                    Val = Tab[i];
+                    if (f[1] == 0) Tab[i]=1;
+                    else if (f[1] != 1) 
+                    while(j < f[1]) {
+                    Tab [i] = Tab [i]*Val;
+                    j++;
+                    }
+                }
+                break;
+            case 3: // x+a
+                for (i=0; i<taille; i++) {
+                    Tab [i] = Tab [i]+f[1]; 
+                }
+                break; 
+                
         }
-        Fonction f;
-        switch (choix[0]) {
-                case 1: // ax
-                    f= new Fonction(){
-                        public int funct (int x, int p) {return p*x;}
-                    };
-                    for (i=0; i<taille; i++)
-                        Tab[i]=f.funct(Tab[i], choix[1]);
-                    break;
-         }
-       
    }    
 }

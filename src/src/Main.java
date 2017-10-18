@@ -18,7 +18,7 @@ public class Main {
         // TODO code application logic here
         System.out.print("hi\n");
         int [] T = {1,2,3,4};
-        int [] T2 = {1,0};
+        int [] T2 = {2,3};
         VectorHelper a = new VectorHelper (T,4);
         try {T= a.Sommer(T2,2);}
         catch (InegaliteException e) { System.out.printf("Erreur\n"); }
