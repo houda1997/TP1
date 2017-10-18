@@ -8,12 +8,17 @@ import java.io.*;
 
 
 public class VectorHelper {
+
     private int Tab [];
     private int taille;
     private int max,min;
 
+    public VectorHelper(int [] Tab, int taille){
+    this.Tab = Tab;
+    this.taille = taille;
+    }
+    public int [] Sommer (int Tab2 [], int taille2) throws InegaliteException
 
-     public int [] Sommer (int Tab2 [], int taille2) throws InegaliteException
     {
         int i;
 
@@ -28,6 +33,7 @@ public class VectorHelper {
     }
 
 
+
     public void trier ()
     {
         boolean ord = false;
@@ -39,7 +45,6 @@ public class VectorHelper {
                     int a = Tab[i];
                     Tab[i] = Tab[i + 1];
                     Tab[i + 1] = a;
-
                     ord = false;
                 }
             }
@@ -47,21 +52,23 @@ public class VectorHelper {
         }
     }
 
-    public void maxmin ()
+ 
+   public void maxmin ()
     {
-        int i,max,min ;
+        int i,max,min;
         max=Tab[0];
         min=Tab[0];
         for (i=0;i<taille;i++)
         {
             if (Tab[i]>max)  { max=Tab[i];}
-            if (Tab[i]<min)  { min=Tab[i];}
+             if (Tab[i]<min)  { min=Tab[i];}
         }
         this.max=max;
         this.min=min;
     }
 
-   public int [] inverser ()
+
+    public int [] inverser ()
     {
         int j=taille-1;
         int [] tab2= new int [taille];
@@ -73,4 +80,22 @@ public class VectorHelper {
         return tab2;
 
     }
+   
+   public void FnctApplique (int [] choix){
+        int i;
+        class Fonction {
+             public int funct (int x, int p) { return x;}
+        }
+        Fonction f;
+        switch (choix[0]) {
+                case 1: // ax
+                    f= new Fonction(){
+                        public int funct (int x, int p) {return p*x;}
+                    };
+                    for (i=0; i<taille; i++)
+                        Tab[i]=f.funct(Tab[i], choix[1]);
+                    break;
+         }
+       
+   }    
 }
