@@ -79,32 +79,21 @@ public class VectorHelper {
 
     }
    
-   public void FnctApplique (int [] f){
+   public void FnctApplique (int [] choix){
         int i;
-        int j=1;
-        switch(f[0]){
-            case 1: // ax
-                for (i=0; i<taille; i++) {
-                    Tab [i] = Tab [i]*f[1]; 
-                }
-                break; 
-            case 2: //x^a
-                for (i=0; i<taille; i++) {
-                    if (f[1] == 0) Tab[i]=1;
-                    else if (f[1] > 1) 
-                    while(j <= f[1]) {
-                    Tab [i] = Tab [i]*Tab[i];
-                    j++;
-                    }
-                }
-                break;
-            case 3: // x+a
-                for (i=0; i<taille; i++) {
-                    Tab [i] = Tab [i]+f[1]; 
-                }
-                break; 
-                
+        class Fonction {
+             public int funct (int x, int p) { return x;}
         }
+        Fonction f;
+        switch (choix[0]) {
+                case 1: // ax
+                    f= new Fonction(){
+                        public int funct (int x, int p) {return p*x;}
+                    };
+                    for (i=0; i<taille; i++)
+                        Tab[i]=f.funct(Tab[i], choix[1]);
+                    break;
+         }
        
    }    
 }
