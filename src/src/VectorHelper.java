@@ -5,14 +5,20 @@
 
 import java.util.*;
 import java.io.*;
+
+
 public class VectorHelper {
-    //int Tab [];
-    //int taille;
-    int [] Sommer (int [] Tab, int taille1,int Tab2 [], int taille2) throws InegaliteException
+    private int Tab [];
+    private int taille;
+    private int max,min;
+
+
+     public int [] Sommer (int Tab2 [], int taille2) throws InegaliteException
     {
         int i;
+
         int Result [];
-        if (taille2 != taille1) throw new InegaliteException ();
+        if (taille2 != taille) throw new InegaliteException ();
         Result = new int [taille];
         for (i=0; i< taille; i++)
         {
@@ -21,20 +27,18 @@ public class VectorHelper {
         return Result;
     }
 
-    void trier (int [] tab; int taille)
+
+    public void trier ()
     {
         boolean ord = false;
 
-        while(!ord)
-        {
+        while(!ord) {
             ord = true;
-            for(int i=0 ; i <taille ; i++)
-            {
-                if(tab[i] > tab[i+1])
-                {
-                    int a=tab[i];
-                    tab[i]=tab[i+1];
-                    tab[i+1]=a;
+            for (int i = 0; i < taille; i++) {
+                if (Tab[i] > Tab[i + 1]) {
+                    int a = Tab[i];
+                    Tab[i] = Tab[i + 1];
+                    Tab[i + 1] = a;
 
                     ord = false;
                 }
@@ -43,36 +47,27 @@ public class VectorHelper {
         }
     }
 
-    int max (int [] tab, int taille)
+    public void maxmin ()
     {
-        int i,m ;
-        m=tab[0];
+        int i,max,min ;
+        max=Tab[0];
+        min=Tab[0];
         for (i=0;i<taille;i++)
         {
-            if (tab[i]>m)  { m=tab[i];}
+            if (Tab[i]>max)  { max=Tab[i];}
+            if (Tab[i]<min)  { min=Tab[i];}
         }
-        return m;
+        this.max=max;
+        this.min=min;
     }
 
-    int min (int [] tab, int taille )
-    {
-        int i,m ;
-        m=tab[0];
-        for (i=0;i<taille;i++)
-        {
-            if (tab[i]<m)  { m=tab[i];}
-        }
-        return m;
-    }
-
-
-    int [] inverser (int []tab, int taille )
+   public int [] inverser ()
     {
         int j=taille-1;
         int [] tab2= new int [taille];
 
         for (int i=0;i<taille;i++) {
-            tab2[j] = tab[i];
+            tab2[j] = Tab[i];
             j--;
         }
         return tab2;

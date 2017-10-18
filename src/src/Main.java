@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-import pkg1cs_tpigl.*;
+
 
 /**
  *
