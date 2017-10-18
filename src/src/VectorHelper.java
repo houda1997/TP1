@@ -5,19 +5,23 @@
 
 import java.util.*;
 import java.io.*;
+
+
 public class VectorHelper {
-    private  int Tab [];
-    private  int taille;
-    private int min;
-    private int max;
-    
+
+    private int Tab [];
+    private int taille;
+    private int max,min;
+
     public VectorHelper(int [] Tab, int taille){
     this.Tab = Tab;
     this.taille = taille;
     }
     public int [] Sommer (int Tab2 [], int taille2) throws InegaliteException
+
     {
         int i;
+
         int Result [];
         if (taille2 != taille) throw new InegaliteException ();
         Result = new int [taille];
@@ -28,21 +32,19 @@ public class VectorHelper {
         return Result;
     }
 
-    void trier ()
+
+
+    public void trier ()
     {
         boolean ord = false;
 
-        while(!ord)
-        {
+        while(!ord) {
             ord = true;
-            for(int i=0 ; i <taille ; i++)
-            {
-                if(Tab[i] > Tab[i+1])
-                {
-                    int a=Tab[i];
-                    Tab[i]=Tab[i+1];
-                    Tab[i+1]=a;
-
+            for (int i = 0; i < taille; i++) {
+                if (Tab[i] > Tab[i + 1]) {
+                    int a = Tab[i];
+                    Tab[i] = Tab[i + 1];
+                    Tab[i + 1] = a;
                     ord = false;
                 }
             }
@@ -50,6 +52,7 @@ public class VectorHelper {
         }
     }
 
+ 
    public void maxmin ()
     {
         int i,max,min;
@@ -63,7 +66,6 @@ public class VectorHelper {
         this.max=max;
         this.min=min;
     }
-
 
 
     public int [] inverser ()
