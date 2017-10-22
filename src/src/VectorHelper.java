@@ -27,6 +27,31 @@ public class VectorHelper {
     this.taille = taille;
     }
     
+    public int [] getTab () {
+        return this.Tab;
+    }
+    
+    public void setTab (int [] Tab) {
+        this.Tab=Tab;
+    }
+    
+     public int getTaille () {
+        return this.taille;
+    }
+    
+    public void setTaille (int taille) {
+        this.taille=taille;
+    }
+    
+      public int getMax () {
+        return this.max;
+    }
+    
+      public int getMin () {
+        return this.min;
+    }
+    
+    
     /**
      * Sommer les éléments de deux tableaux case par case 
      * @param Tab2 : le tableau qu'on va sommmer ses éléments aux éléments de "Tab" 
@@ -59,7 +84,7 @@ public class VectorHelper {
 
         while(!ord) {
             ord = true;
-            for (int i = 0; i < taille; i++) {
+            for (int i = 0; i < taille-1 ; i++) {
                 if (Tab[i] > Tab[i + 1]) {
                     int a = Tab[i];
                     Tab[i] = Tab[i + 1];
