@@ -23,7 +23,7 @@ public class Main {
         try {T= a.Sommer(T2,2);}
         catch (InegaliteException e) { System.out.printf("Erreur\n"); }
         
-        
+       
         a.FnctApplique(T2);
         for (int i=0; i<4; i++) System.out.print(T[i] +" \n");
     }

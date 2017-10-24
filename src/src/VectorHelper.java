@@ -27,27 +27,51 @@ public class VectorHelper {
     this.taille = taille;
     }
     
+    /**
+     *
+     * @return
+     */
     public int [] getTab () {
         return this.Tab;
     }
     
+    /**
+     *
+     * @param Tab
+     */
     public void setTab (int [] Tab) {
         this.Tab=Tab;
     }
     
-     public int getTaille () {
+    /**
+     *
+     * @return
+     */
+    public int getTaille () {
         return this.taille;
     }
     
+    /**
+     *
+     * @param taille
+     */
     public void setTaille (int taille) {
         this.taille=taille;
     }
     
-      public int getMax () {
+    /**
+     *
+     * @return
+     */
+    public int getMax () {
         return this.max;
     }
     
-      public int getMin () {
+    /**
+     *
+     * @return
+     */
+    public int getMin () {
         return this.min;
     }
     
@@ -58,6 +82,7 @@ public class VectorHelper {
      * @param taille2 : le nombre d'éléments de "Tab2"
      * @return le tableau tel que chaque case=Tab[i] + Tab2[i] de taille "taille" 
      * @throws InegaliteException si taille != taille2
+     * @Exemple d'utilisation : Tab= [1,2,3] + Tab2=[2,4,5] = Sommer= [3,6,8]
      */
     public int [] Sommer (int Tab2 [], int taille2) throws InegaliteException
 
@@ -77,6 +102,7 @@ public class VectorHelper {
 
    /**
    * Trier un tableau avec la méthode "Tri Bulles"
+   * @Exemple d'utilisation : Tab= [100,2,35] --->  trier =[2,35,100]
    */
     public void trier ()
     {
@@ -92,12 +118,12 @@ public class VectorHelper {
                     ord = false;
                 }
             }
-            taille--;
         }
     }
 
     /**
     * Cherche le plus grand et le plus petit éléments d'un tableau
+    * @Exemple d'utilisation : Tab= [1,2,3] ----> VectorHelper.max = 3; VectorHelper.min =1
     */
    public void maxmin ()
     {
@@ -116,6 +142,7 @@ public class VectorHelper {
    /**
    * Inverser un tableau 
    * @return l'invesre du tableau "Tab"
+   * @Exemple d'utilisation : Tab= [1,2,3] ---> inverser= [3,2,1]
    */
     public int [] inverser ()
     {
@@ -137,6 +164,9 @@ public class VectorHelper {
     *f[0] = 2 : x^a
     *f[0] = 3 : x+a
     *f[1] = a
+    * @Exemple d'utilisation : Tab= [1,2,3], f(1,3) ----> VectorHelper.Tab =[3,6,9]
+    * Tab= [1,2,3], f(2,3) ----> VectorHelper.Tab =[3,8,27]
+    * Tab= [1,2,3], f(3,3) ----> VectorHelper.Tab =[4,5,6]
     */       
    public void FnctApplique (int [] f){
         int i;
