@@ -159,4 +159,6 @@ public class VectorHelperTest {
         int[] result = instance.getTab();
         assertArrayEquals(expResult, result);
     } 
+
+  
 }
